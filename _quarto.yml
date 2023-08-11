@@ -1,10 +1,9 @@
 project:
   type: website
   output-dir: docs
-
 website:
   title: "Joachim Goedhart | Homepage"
-  site-url: https://joachimgoedhart.github.io/
+  site-url: "https://joachimgoedhart.github.io/"
   open-graph: true
   favicon: "https://joachimgoedhart.github.io/mTq2-Chainbows.png"
   navbar:
@@ -21,10 +20,10 @@ website:
       - icon: github
         href: https://github.com/JoachimGoedhart/JoachimGoedhart.github.io
   twitter-card:
-    creator: "@joachimgoedhart"
     card-style: summary
-    image: "https://joachimgoedhart.github.io/mTq2-Chainbows.png"
+    title: "Joachim Goedhart | Homepage"
     description: "Scientist | Teacher | University of Amsterdam | Cells | Molecules | Microscopy | Fluorescence | dataViz | R | shiny"
+    image: "https://joachimgoedhart.github.io/mTq2-Chainbows.png"
 format:
   html:
     theme:

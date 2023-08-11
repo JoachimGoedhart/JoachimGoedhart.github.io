@@ -6,7 +6,7 @@ format:
     toc: true
 ---
 
-Below you will find a selection of timelapse imaging data - hover over the image (or tap on mobile devices) to start the movie
+Below you will find a selection of timelapse imaging data - **hover** over the image (or **tap** on touch screens) to start the movie
 
 ## Microtubule dynamics
 
