@@ -1,0 +1,73 @@
+/*-- scss:defaults --*/
+
+
+//Based on this : https://blog.logrocket.com/creating-css-masonry-style-layouts/
+.gallery {
+ column-count: 2;
+ column-gap: 20px 20px;
+ width: auto;
+}
+
+.gallery img {
+ margin-bottom: 10px;
+}
+
+/**** Animate movies onhover/click *******/
+
+.figure {
+    position: relative;
+  }
+.figure img.image-hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  
+// Need in this order :hover :focus :active to be compatible with touch devices
+.figure:hover img.image-hover, .figure:focus img.image-hover, .figure:active img.image-hover {
+    opacity: 1;
+  }
+
+
+/**** animated underline on hover, when navbar shows as row *******/
+
+@media screen and (min-width: 992px) {
+  a.nav-link {
+    position: relative;
+  }
+  
+  .navbar .navbar-nav .nav-item {
+    position: relative;
+  }
+  
+  .navbar .navbar-nav .nav-item::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: white;
+    width: 0%;
+    content: "";
+    height: 2px;
+    transition: all 0.3s;
+  }
+  
+
+  .navbar .navbar-nav .nav-item:hover::after {
+    width: 90%;
+  }
+  
+  .gallery {
+    column-count: 4;
+    column-gap: 20px 20px;
+    width: auto;
+}
+  
+  
+}

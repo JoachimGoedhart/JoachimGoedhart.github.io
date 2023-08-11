@@ -1,0 +1,135 @@
+[
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "Visiting address\n\nDr. Ir. Joachim Goedhart\nSection Molecular Cytology\nUniversity of Amsterdam\nRoom C2.264\nScience Park 904\nNL-1098 XH Amsterdam\nThe Netherlands\n\n\n\n\nE-mail\n\nj.goedhart@uva.nl\n\n\n\nTwitter\n\n@joachimgoedhart\n\n\n\n\n\nOur lab is located in the Amsterdam Science Park. Find more information here:\n\nGetting there\nMap"
+  },
+  {
+    "objectID": "tools.html",
+    "href": "tools.html",
+    "title": "Tools",
+    "section": "",
+    "text": "We generate a variety of tools (plasmids, code, dashboards, apps) that we share. It is very valuable for us to know how/where/when (and when not) these tools work in the hands of others. Therefore, we appreciate any feedback, suggestions or questions. Feel free to contact me and share your thoughts!\nBelow you will find an overview of the different resources and tools that we have developed."
+  },
+  {
+    "objectID": "tools.html#plasmids",
+    "href": "tools.html#plasmids",
+    "title": "Tools",
+    "section": "Plasmids",
+    "text": "Plasmids\nWe generate a large number of genetically encoded proteins and biosensors. The advantage of these DNA encoded tools is that they can be easily shared as plasmids. We deposit the most relevant (and popular) plasmids that are generated at the Section of Molecular Cytology at addgene. The benefit is that the plasmids are (generally) fully sequence verified. If you are interested in any of our plasmids, I encourage you to check the addgene website where the plasmids are organized by article:\n\n Find our Plasmids"
+  },
+  {
+    "objectID": "tools.html#apps-code",
+    "href": "tools.html#apps-code",
+    "title": "Tools",
+    "section": "Apps & code",
+    "text": "Apps & code\nData visualization is a key step in data exploration and also important for the interpretation and presentation of results. To simplify data visualization and to encourage the transparent presentation of data, we have generated a number of web apps. These online apps implement state-of-the-art data visualization methods in a user-friendly way and are open source and freely accessible. Several of the apps have been published and it is advised to read the accompanying papers to learn how the apps can be used (you can find this information under the ‘About’ tab of each web app). The example output of the apps should give you some idea of what kind of figures you can make:\n\nThe apps are open-source and freely accessible at https://huygens.science.uva.nl/, or alternatively through this site.\nThe code and scripts that we generate for our research and education are available at Github. Most of the code deals with data Visualization."
+  },
+  {
+    "objectID": "tools.html#dashboards",
+    "href": "tools.html#dashboards",
+    "title": "Tools",
+    "section": "Dashboards",
+    "text": "Dashboards\nA dashboard can be an elegant and interactive platform to share data (instead of the useless statement ‘data available upon request’). We have generated a couple of interactive dashboards, using either {shiny} or the {flexdashboard} package.\nThe polarVolcaNoseR app was developed in {shiny} in collaboration with Román González Prieto to share research data in an accessible way. You will find more information in the accompanying paper.\nAnother example is a dashboard that can be used to show how many plasmids have been shared with the community via addgene. This dashboard is made with the {flexdashboard} package. Users can upload their plasmid request data and visualize the stats on a dashboard that is available here. Background information on the purpose and development in this blog."
+  },
+  {
+    "objectID": "tools.html#tutorials-blogs",
+    "href": "tools.html#tutorials-blogs",
+    "title": "Tools",
+    "section": "Tutorials & Blogs",
+    "text": "Tutorials & Blogs\nI enjoy blogging about a variety of topics that are related to our research. It all started when I realized that transparency in data presentation (by showing the data) is crucial. This was - at that time - not common (and the number of tools to present data in a clear way was )partially because of a lack of good tools). To make my point that showing the data is important, I generated this animation of exploding barplots (you can make one with your own data with this script):\n\n\n\n\n\nThe blogs that I have written are posted on different platforms and deal with statistics, data visualization and Fluorescent Protein technology. Here’s an overview of all of my blogs."
+  },
+  {
+    "objectID": "tools.html#dataviz-protocols",
+    "href": "tools.html#dataviz-protocols",
+    "title": "Tools",
+    "section": "DataViz protocols",
+    "text": "DataViz protocols\nThe Shiny apps allow user-friendly and fast visualization of data. Despite a lot of flexibility, the options are still limited. To have full reproducibility, control and flexibility over the data visualization, coding is necessary. I have detailed some of the steps (with code) to analyze and plot data with R/ggplot2 in blogs. To gather this information in a central and structured way, I have generated an online resource (or book, if you will) with DataViz protocols. This is a living document that will be updated whenever a new dataViz protocol is ready. If you have suggestions, please let me know! Here is a selection of the different data visualizations that are covered by a protocol:"
+  },
+  {
+    "objectID": "movies.html",
+    "href": "movies.html",
+    "title": "Movies",
+    "section": "",
+    "text": "Below you will find a selection of timelapse imaging data - hover over the image to start the movie"
+  },
+  {
+    "objectID": "movies.html#microtubule-dynamics",
+    "href": "movies.html#microtubule-dynamics",
+    "title": "Movies",
+    "section": "Microtubule dynamics",
+    "text": "Microtubule dynamics\nThe dynamics of microtubules is detected by live-cell imaging of EB3 tagged with a fluorescent protein. When the drug nocadozole is added, the microtubules are disrupted and the EB3 labeling dissolves.\nSource: 10.1101/2021.02.24.432684"
+  },
+  {
+    "objectID": "movies.html#monolayer-disruption",
+    "href": "movies.html#monolayer-disruption",
+    "title": "Movies",
+    "section": "Monolayer disruption",
+    "text": "Monolayer disruption\nGlobal activation of Rho by the optogenetic tool Opto-P63 results in cell contraction. As a consequence, cell-cell interactions are disrupted and the integrity of the cell monolayer is lost.\nSource: 10.7554/eLife.84364"
+  },
+  {
+    "objectID": "movies.html#cell-division",
+    "href": "movies.html#cell-division",
+    "title": "Movies",
+    "section": "Cell division",
+    "text": "Cell division\nThe cancer cells that we use for our research divide roughly every 24 hours. Here, a bacterial DNA-binding protein was used to detect the DNA in the nucleus of a cell. The movie (composed from four different views) shows the condensation, alignment and separation of the DNA when a cell divides.\nSource: 10.1093/nar/gkab993"
+  },
+  {
+    "objectID": "movies.html#controlling-cell-migration",
+    "href": "movies.html#controlling-cell-migration",
+    "title": "Movies",
+    "section": "Controlling cell migration",
+    "text": "Controlling cell migration\nLocal illumination of the optogenetic tool ‘Opto-TIAM’ with blue light (indicated by the blue square) induces local activation of Rac, resulting in directed cell migration of the endothelial cell.\nSource: 10.7554/eLife.84364"
+  },
+  {
+    "objectID": "movies.html#crossing-a-blood-vessel",
+    "href": "movies.html#crossing-a-blood-vessel",
+    "title": "Movies",
+    "section": "Crossing a blood vessel",
+    "text": "Crossing a blood vessel\nThe white blood cells that are normally present in our blood leave the blood vessels when the surrounding tissue is inflamed. In this movie this process is shown, with white blood cells depicted in magenta. The white blood cells pass between two endothelial cells (in turquoise and green). This movie is a reconstruction of data acquired (by Janine Arts and Eike Mahlandt) with a Lattice Light Sheet Microscope at the Advanced Imaging center in Janelia.\nSource: 10.7554/elife.66074"
+  },
+  {
+    "objectID": "movies.html#avoding-obstacles",
+    "href": "movies.html#avoding-obstacles",
+    "title": "Movies",
+    "section": "Avoding obstacles",
+    "text": "Avoding obstacles\nOnce a white blood cell has left the blood vessel, it is on the other side of an endothelial cell and encounters focal adhesions. These structures are important for cell-cell contacts, but they are obstacles for the white blood cells. The movie shows white blood cells (in purple) moving around, underneath endothelial cells and buming into the focal adhesions (the white spots are the focal adhesions, imaged with TIRF).\nSource: 10.3389/fimmu.2021.667213"
+  },
+  {
+    "objectID": "movies.html#waves-of-activity",
+    "href": "movies.html#waves-of-activity",
+    "title": "Movies",
+    "section": "Waves of activity",
+    "text": "Waves of activity\nBiosensors can detect molecular ‘activities’ inside of cells. Here, an endothelial cell expresses a FRET-based probe that can detect the activity of the protein Rho. The false colors reflect the activity with yellow/red indicating high activity. The activity of Rho moves like a wave through the cell. Retraction of the cell edge is preceded by high activity of Rho.\nSource: 10.1038/srep25502"
+  },
+  {
+    "objectID": "movies.html#calcium-calibrated",
+    "href": "movies.html#calcium-calibrated",
+    "title": "Movies",
+    "section": "Calcium Calibrated",
+    "text": "Calcium Calibrated\nMost biosensors that are used to study cellular processes provide relative information on changes, i.e. an increase or decrease of signal. Yet, it can be valuable to measure absolute changes, for instance in the intracelular concentration of calcium. The FLIM-based sensor, Tq-Ca-FLITS, measures absolute calcium concentrations as shown in this movie. The calcium concentrations in the two endothelial cells change from &lt;100 nM to up to 15 µM and show an oscillating pattern.\nSource: 10.1038/s41467-021-27249-w"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome!",
+    "section": "",
+    "text": "Welcome to my personal website. I am an assistant professor at the section of Molecular Cytology at the University of Amsterdam. My research focuses on the development and application of fluorescent probes for the study of molecular processes inside living cells with microscopy. In addition, I am working on ways to simplify data analysis and data visualization and to this end I have co-developed Shiny apps and dashboards. Our lab is committed to share our tools and expertise, so feel free to reach out if you have questions.  I am a teacher in several courses that deal with cell biology, (advanced) microscopy or data visualization at different levels (BsC, MsC, PhD and up)."
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Peer-reviewed publications: Pudmed\nAll publications: Google scholar\nPreprints: bioRxiv\n\n\n\nSelected publications\n\n\nOpto-RhoGEFs, an optimized optogenetic toolbox to reversibly control Rho GTPase activity on a global to subcellular scale, enabling precise control over vascular endothelial barrier strength.\nMahlandt EK, Palacios Martínez S, Arts JJ, Tol S, van Buul JD, Goedhart J. (2023) eLife, doi:10.7554/eLife.84364\n\n\n\n\n\n\n\n\nSingle-cell imaging of ERK and Akt activation dynamics and heterogeneity induced by G-protein-coupled receptors\nChavez-Abiega S, Grönloh MLB, Gadella Jr. TWJ, Bruggeman FJ, Goedhart J (2022) Journal of Cell Science, doi:10.1242/jcs.259685\n\n\n\n\n\n\n\n\nA turquoise fluorescence lifetime-based biosensor for quantitative imaging of intracellular calcium\nvan der Linden FH, Mahlandt EK, Arts JJG, Beumer J, Puschhof J, de Man SMA, Chertkova AO, Ponsioen B, Clevers H, van Buul JD, Postma M, Gadella Jr. TWJ, Goedhart J (2021) Nature Communications, doi:10.1038/s41467-021-27249-w\n\n\n\n\n\n\n\n\nSuperPlotsOfData—a web app for the transparent display and quantitative comparison of continuous data from different conditions\nGoedhart J (2021) Molecular Biology of the Cell, doi:10.1091/mbc.E20-09-0583\n\n\n\n\n\n\n\n\nRobust and Bright Genetically Encoded Fluorescent Markers for Highlighting Structures and Compartments in Mammalian Cells\nChertkova AO, Mastop M, Postma M, van Bommel N, van der Niet S, Batenburg KL, Joosen L, Gadella Jr. TW J, Okada Y, Goedhart, J (2020) bioRxiv, doi:10.1101/160374\n\n\n\n\n\n\n\n\nStructure-guided evolution of cyan fluorescent proteins towards a quantum yield of 93%\nGoedhart J, von Stetten D, Noirclerc-Savoye M, Lelimousin M, Joosen L, Hink MA, van Weeren L, Gadella Jr. TWJ, Royant A (2012) Nature Communications, doi:10.1038/ncomms1738"
+  },
+  {
+    "objectID": "photos.html",
+    "href": "photos.html",
+    "title": "Photos",
+    "section": "",
+    "text": "Agar Art\n\n              \n\n\n\nCells\n\n               \n\n\n\nPhD Thesis Covers\n\n            \n\n\n\nRandom lab stuff"
+  }
+]

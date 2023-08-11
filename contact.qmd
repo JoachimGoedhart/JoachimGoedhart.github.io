@@ -1,0 +1,44 @@
+---
+title: "Contact"
+---
+
+::: grid
+::: {.g-col-12 .g-col-md-6}
+
+#### Visiting address
+
+-   Dr. Ir. Joachim Goedhart
+-   <a href="http://www.molecularcytology.nl">Section Molecular Cytology</a>
+-   <a href="http://www.uva.nl">University of Amsterdam</a>
+-   Room C2.264
+-   Science Park 904
+-   NL-1098 XH Amsterdam
+-   The Netherlands
+
+:::
+
+
+::: {.g-col-12 .g-col-md-6}
+
+
+
+#### E-mail
+
+-   <a href="mailto:
+    &#106;&#046;&#103;&#111;&#101;&#100;&#104;&#097;&#114;&#116;&#064;&#117;&#118;&#097;&#046;&#110;&#108;">j.goedhart\@uva.nl</a>
+
+#### Twitter
+
+-   <a href="https://twitter.com/joachimgoedhart">@joachimgoedhart</a>
+
+:::
+
+:::
+
+---------------
+
+Our lab is located in the Amsterdam Science Park. Find more information here:
+
+-   [Getting there](https://www.amsterdamsciencepark.nl/contact/getting-there/)
+-   [Map](https://www.amsterdamsciencepark.nl/contact/visitors-map/)
+

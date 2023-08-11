@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Joachim Goedhart | Homepage"
+  navbar:
+    right:
+      - tools.qmd
+      - publications.qmd
+      - movies.qmd
+      - photos.qmd
+      - contact.qmd
+  page-footer:
+    background: dark
+    center: Joachim Goedhart - 2023<br>made with [quarto](https://quarto.org)
+  twitter-card:
+    creator: "@joachimgoedhart"
+    site: "@joachimgoedhart"
+
+format:
+  html:
+    theme:
+      light: [flatly, styles.scss]
+      dark: [darkly, styles.scss]
+    toc: false
+
+
+

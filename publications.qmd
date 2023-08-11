@@ -1,0 +1,105 @@
+---
+title: "Publications"
+---
+
+-   Peer-reviewed publications: [Pudmed](https://pubmed.ncbi.nlm.nih.gov/?term=%22Goedhart+J%22%5BAuthor%5D&sort=pubdate&size=200)
+
+-   All publications: [Google scholar](https://scholar.google.com/citations?hl=en&user=kt-dnAkAAAAJ&view_op=list_works&sortby=pubdate)
+
+-   Preprints: [bioRxiv](http://www.biorxiv.org/search/author1%3Agoedhart%2BJ%20numresults%3A10%20sort%3Arelevance-rank%20format_result%3Astandard)
+
+------------------------------------------------------------------------
+
+# Selected publications
+
+::: grid
+::: {.g-col-12 .g-col-md-8}
+#### Opto-RhoGEFs, an optimized optogenetic toolbox to reversibly control Rho GTPase activity on a global to subcellular scale, enabling precise control over vascular endothelial barrier strength.
+
+Mahlandt EK, Palacios Martínez S, Arts JJ, Tol S, van Buul JD, Goedhart J. (2023) *eLife*, doi:[10.7554/eLife.84364](https://doi.org/10.7554/eLife.84364)
+:::
+
+::: {.g-col-8 .g-col-md-4}
+![](papers/VA_OptoRhoGEFs.gif)
+:::
+:::
+
+------------------------------------------------------------------------
+
+::: grid
+::: {.g-col-12 .g-col-md-8}
+#### Single-cell imaging of ERK and Akt activation dynamics and heterogeneity induced by G-protein-coupled receptors
+
+Chavez-Abiega S, Grönloh MLB, Gadella Jr. TWJ, Bruggeman FJ, Goedhart J (2022) *Journal of Cell Science*, doi:[10.1242/jcs.259685](https://doi.org/10.1242/jcs.259685)
+:::
+
+::: {.g-col-8 .g-col-md-4}
+![](papers/VA_KTR.png)
+:::
+:::
+
+------------------------------------------------------------------------
+
+::: grid
+::: {.g-col-12 .g-col-md-8}
+#### A turquoise fluorescence lifetime-based biosensor for quantitative imaging of intracellular calcium
+
+van der Linden FH, Mahlandt EK, Arts JJG, Beumer J, Puschhof J, de Man SMA, Chertkova AO, Ponsioen B, Clevers H, van Buul JD, Postma M, Gadella Jr. TWJ, Goedhart J (2021) *Nature Communications*, doi:[10.1038/s41467-021-27249-w](https://doi.org/10.1038/s41467-021-27249-w)
+:::
+
+::: {.g-col-8 .g-col-md-4}
+![](papers/VA_Tq-FLITS.gif)
+:::
+:::
+
+------------------------------------------------------------------------
+
+::: grid
+::: {.g-col-12 .g-col-md-8}
+#### SuperPlotsOfData---a web app for the transparent display and quantitative comparison of continuous data from different conditions
+
+Goedhart J (2021) *Molecular Biology of the Cell*, doi:[10.1091/mbc.E20-09-0583](https://doi.org/10.1091/mbc.E20-09-0583)
+:::
+
+::: {.g-col-8 .g-col-md-4}
+![](papers/VA_SuperPlotsOfData.png)
+:::
+:::
+
+------------------------------------------------------------------------
+
+::: grid
+::: {.g-col-12 .g-col-md-8}
+#### Robust and Bright Genetically Encoded Fluorescent Markers for Highlighting Structures and Compartments in Mammalian Cells
+
+Chertkova AO, Mastop M, Postma M, van Bommel N, van der Niet S, Batenburg KL, Joosen L, Gadella Jr. TW J, Okada Y, Goedhart, J (2020) *bioRxiv*, doi:[10.1101/160374](https://doi.org/10.1101/160374)
+:::
+
+::: {.g-col-8 .g-col-md-4}
+![](papers/VA_markers.png)
+:::
+:::
+
+------------------------------------------------------------------------
+
+::: grid
+::: {.g-col-12 .g-col-md-8}
+#### Structure-guided evolution of cyan fluorescent proteins towards a quantum yield of 93%
+
+Goedhart J, von Stetten D, Noirclerc-Savoye M, Lelimousin M, Joosen L, Hink MA, van Weeren L, Gadella Jr. TWJ, Royant A (2012) *Nature Communications*, doi:[10.1038/ncomms1738](https://doi.org/10.1038/ncomms1738)
+:::
+
+::: {.g-col-8 .g-col-md-4}
+![](papers/VA_mTq2.png)
+:::
+:::
+
+------------------------------------------------------------------------
+
+::: grid
+::: {.g-col-12 .g-col-md-8}
+:::
+
+::: {.g-col-8 .g-col-md-4}
+:::
+:::

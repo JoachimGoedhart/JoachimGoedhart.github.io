@@ -1,0 +1,103 @@
+---
+title: "Movies"
+
+format:
+  html:
+    toc: true
+---
+
+Below you will find a selection of timelapse imaging data - hover over the image to start the movie
+
+## Microtubule dynamics
+
+The dynamics of microtubules is detected by live-cell imaging of EB3 tagged with a fluorescent protein. When the drug nocadozole is added, the microtubules are disrupted and the EB3 labeling dissolves.
+
+Source: [10.1101/2021.02.24.432684](https://doi.org/10.1101/2021.02.24.432684)
+
+::: figure
+<img src="movies/EB3-preview.png" class="image-main"/> <img src="movies/EB3.gif" class="image-hover"/>
+:::
+
+------------------------------------------------------------------------
+
+## Monolayer disruption
+
+Global activation of Rho by the optogenetic tool Opto-P63 results in cell contraction. As a consequence, cell-cell interactions are disrupted and the integrity of the cell monolayer is lost.
+
+Source: [10.7554/eLife.84364](https://doi.org/10.7554/eLife.84364)
+
+::: figure
+<img src="movies/Opto-p63-1.gif" class="image-main"/> <img src="movies/Opto-p63.gif" class="image-hover"/>
+:::
+
+------------------------------------------------------------------------
+
+## Cell division
+
+The cancer cells that we use for our research divide roughly every 24 hours. Here, a bacterial DNA-binding protein was used to detect the DNA in the nucleus of a cell. The movie (composed from four different views) shows the condensation, alignment and separation of the DNA when a cell divides.
+
+Source: [10.1093/nar/gkab993](https://doi.org/10.1093/nar/gkab993)
+
+::: figure
+<img src="movies/HiNess-1.gif" class="image-main"/> <img src="movies/HiNess.gif" class="image-hover"/>
+:::
+
+------------------------------------------------------------------------
+
+## Controlling cell migration
+
+Local illumination of the optogenetic tool 'Opto-TIAM' with blue light (indicated by the blue square) induces local activation of Rac, resulting in directed cell migration of the endothelial cell.
+
+Source: [10.7554/eLife.84364](https://doi.org/10.7554/eLife.84364)
+
+::: figure
+<img src="movies/Opto-TIAM-guided-1.gif" class="image-main"/> <img src="movies/Opto-TIAM-guided.gif" class="image-hover"/>
+:::
+
+------------------------------------------------------------------------
+
+## Crossing a blood vessel
+
+The white blood cells that are normally present in our blood leave the blood vessels when the surrounding tissue is inflamed. In this movie this process is shown, with white blood cells depicted in magenta. The white blood cells pass between two endothelial cells (in turquoise and green). This movie is a reconstruction of data acquired (by Janine Arts and Eike Mahlandt) with a Lattice Light Sheet Microscope at the Advanced Imaging center in Janelia.
+
+Source: [10.7554/elife.66074](https://doi.org/10.7554/elife.66074)
+
+::: figure
+<img src="movies/TEM-4D-1.gif" class="image-main"/> <img src="movies/TEM-4D.gif" class="image-hover"/>
+:::
+
+------------------------------------------------------------------------
+
+## Avoding obstacles
+
+Once a white blood cell has left the blood vessel, it is on the other side of an endothelial cell and encounters focal adhesions. These structures are important for cell-cell contacts, but they are obstacles for the white blood cells. The movie shows white blood cells (in purple) moving around, underneath endothelial cells and buming into the focal adhesions (the white spots are the focal adhesions, imaged with TIRF).
+
+Source: [10.3389/fimmu.2021.667213](https://doi.org/10.3389/fimmu.2021.667213)
+
+::: figure
+<img src="movies/Neutro-turn-1.gif" class="image-main"/> <img src="movies/Neutro-turn.gif" class="image-hover"/>
+:::
+
+------------------------------------------------------------------------
+
+## Waves of activity
+
+Biosensors can detect molecular 'activities' inside of cells. Here, an endothelial cell expresses a FRET-based probe that can detect the activity of the protein Rho. The false colors reflect the activity with yellow/red indicating high activity. The activity of Rho moves like a wave through the cell. Retraction of the cell edge is preceded by high activity of Rho.
+
+Source: [10.1038/srep25502](https://doi.org/10.1038/srep25502)
+
+::: figure
+<img src="movies/RhoB_nocadozole-1.gif" class="image-main"/> <img src="movies/RhoB_nocadozole.gif" class="image-hover"/>
+:::
+
+------------------------------------------------------------------------
+
+## Calcium Calibrated
+
+Most biosensors that are used to study cellular processes provide relative information on changes, i.e. an increase or decrease of signal. Yet, it can be valuable to measure absolute changes, for instance in the intracelular concentration of calcium. The FLIM-based sensor, Tq-Ca-FLITS, measures absolute calcium concentrations as shown in this movie. The calcium concentrations in the two endothelial cells change from \<100 nM to up to 15 µM and show an oscillating pattern.
+
+Source: [10.1038/s41467-021-27249-w](https://doi.org/10.1038/s41467-021-27249-w)
+
+::: figure
+<img src="movies/Tq-FLITS-His-1.gif" class="image-main"/> <img src="movies/Tq-FLITS-His.gif" class="image-hover"/>
+:::
