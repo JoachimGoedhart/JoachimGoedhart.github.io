@@ -24,7 +24,7 @@ website:
     creator: "@joachimgoedhart"
     card-style: summary
     image: "https://joachimgoedhart.github.io/mTq2-Chainbows.png"
-    description: "Scientist & Teacher @UvA_Amsterdam | Cells | Molecules | Microscopy | Fluorescence | dataViz | R/ggplot2/shiny"
+    description: "Scientist | Teacher | University of Amsterdam | Cells | Molecules | Microscopy | Fluorescence | dataViz | R | shiny"
 format:
   html:
     theme:
