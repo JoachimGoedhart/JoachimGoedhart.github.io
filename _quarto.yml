@@ -23,7 +23,8 @@ website:
   twitter-card:
     creator: "@joachimgoedhart"
     site: "@joachimgoedhart"
-    image: mTq2-Chainbows.png
+    image: "https://joachimgoedhart.github.io/mTq2-Chainbows.png"
+    description: "Scientist & Teacher @UvA_Amsterdam | Cells | Molecules | Microscopy | Fluorescence | dataViz | R/ggplot2/shiny"
 format:
   html:
     theme:
