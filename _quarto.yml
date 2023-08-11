@@ -6,7 +6,7 @@ website:
   title: "Joachim Goedhart | Homepage"
   site-url: https://joachimgoedhart.github.io/
   open-graph: true
-  favicon: mTq2-Chainbows.png
+  favicon: "https://joachimgoedhart.github.io/mTq2-Chainbows.png"
   navbar:
     right:
       - tools.qmd
@@ -22,7 +22,7 @@ website:
         href: https://github.com/JoachimGoedhart/JoachimGoedhart.github.io
   twitter-card:
     creator: "@joachimgoedhart"
-    site: "@joachimgoedhart"
+    card-style: summary
     image: "https://joachimgoedhart.github.io/mTq2-Chainbows.png"
     description: "Scientist & Teacher @UvA_Amsterdam | Cells | Molecules | Microscopy | Fluorescence | dataViz | R/ggplot2/shiny"
 format:
