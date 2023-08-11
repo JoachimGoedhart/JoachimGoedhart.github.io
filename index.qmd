@@ -18,6 +18,11 @@ about:
     - text: Github
       icon: github
       href: https://github.com/JoachimGoedhart
+twitter-card:
+  card-style: summary
+  title: "Joachim Goedhart | Homepage"
+  description: "I'm a scientist and teacher at the University of Amsterdam. Find out more about our research and the tools that we develop"
+  image: "mTq2-Chainbows.png"
 ---
 
 Welcome to my personal website. I am an assistant professor at the section of [Molecular Cytology](http://www.molcyto.nl/) at the University of Amsterdam. My research focuses on the development and application of fluorescent probes for the study of molecular processes inside living cells with microscopy. In addition, I am working on ways to simplify data analysis and data visualization and to this end I have co-developed Shiny apps and dashboards. Our lab is committed to share our tools and expertise, so feel free to reach out if you have questions. </br> I am a teacher in several courses that deal with cell biology, (advanced) microscopy or data visualization at different levels (BsC, MsC, PhD and up).
