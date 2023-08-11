@@ -1,0 +1,12 @@
+.quarto/
+.Rproj.user
+
+.RData
+.Rhistory
+.Rapp.history
+
+rsconnect/
+
+.DS_Store
+
+README_files/
