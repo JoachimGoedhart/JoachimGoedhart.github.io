@@ -5,7 +5,7 @@ website:
   title: "Joachim Goedhart | Homepage"
   site-url: "https://joachimgoedhart.github.io/"
   open-graph: true
-  favicon: "https://joachimgoedhart.github.io/mTq2-Chainbows.png"
+  favicon: mTq2-Chainbows.png
   navbar:
     right:
       - tools.qmd
