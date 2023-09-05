@@ -14,7 +14,7 @@ about:
       href: https://www.twitter.com/joachimgoedhart
     - text: ORCiD
       icon: orcid
-      href: orcid.org/0000-0002-0630-3825
+      href: https://orcid.org/0000-0002-0630-3825
     - text: Github
       icon: github
       href: https://github.com/JoachimGoedhart
