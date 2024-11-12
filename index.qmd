@@ -7,13 +7,13 @@ about:
   image-width: 12em
   links:
     - text: Email
-      icon: envelope
+      icon: envelope-fill
       href: mailto:j.goedhart@uva.nl
-    - icon: twitter
-      text: twitter
-      href: https://www.twitter.com/joachimgoedhart
+    - icon: geo-alt-fill
+      text: Bluesky
+      href: https://bsky.app/profile/joachimgoedhart.bsky.social
     - text: ORCiD
-      icon: orcid
+      icon: mortarboard-fill
       href: https://orcid.org/0000-0002-0630-3825
     - text: Github
       icon: github
