@@ -9,8 +9,8 @@ about:
     - text: Email
       icon: envelope-fill
       href: mailto:j.goedhart@uva.nl
-    - icon: geo-alt-fill
-      text: Bluesky
+    - icon: ""
+      text: "{{< fa brands bluesky >}} Bluesky"
       href: https://bsky.app/profile/joachimgoedhart.bsky.social
     - text: ORCiD
       icon: mortarboard-fill
@@ -21,3 +21,8 @@ about:
 ---
 
 Welcome to my personal website. I am an assistant professor at the section of [Molecular Cytology](http://www.molcyto.nl/) at the University of Amsterdam. My research focuses on the development and application of fluorescent probes for the study of molecular processes inside living cells with microscopy. In addition, I am working on ways to simplify data analysis and data visualization and to this end I have co-developed Shiny apps and dashboards. Our lab is committed to share our tools and expertise, so feel free to reach out if you have questions. </br> I am a teacher in several courses that deal with cell biology, (advanced) microscopy or data visualization at different levels (BsC, MsC, PhD and up).
+
+
+
+
+
