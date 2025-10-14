@@ -81,7 +81,7 @@
     "href": "contact.html",
     "title": "Contact",
     "section": "",
-    "text": "Visiting address\n\nDr. Ir. Joachim Goedhart\nSection Molecular Cytology\nUniversity of Amsterdam\nRoom C2.264\nScience Park 904\nNL-1098 XH Amsterdam\nThe Netherlands\n\n\n\n\nE-mail\n\nj.goedhart@uva.nl\n\n\n\nTwitter\n\n@joachimgoedhart\n\n\n\n\n\nOur lab is located in the Amsterdam Science Park. Find more information here:\n\nGetting there\nMap"
+    "text": "Visiting address\n\nDr. Ir. Joachim Goedhart\nSection Molecular Cytology\nUniversity of Amsterdam\nRoom C2.264\nScience Park 904\nNL-1098 XH Amsterdam\nThe Netherlands\n\n\n\n\nE-mail\n\nj.goedhart@uva.nl\n\n\n\nBluesky\n\n@joachimgoedhart.bsky.social\n\n\n\n\n\nOur lab is located in the Amsterdam Science Park. Find more information here:\n\nGetting there\nMap"
   },
   {
     "objectID": "tools.html",
@@ -130,6 +130,6 @@
     "href": "index.html",
     "title": "Welcome!",
     "section": "",
-    "text": "Welcome to my personal website. I am an assistant professor at the section of Molecular Cytology at the University of Amsterdam. My research focuses on the development and application of fluorescent probes for the study of molecular processes inside living cells with microscopy. In addition, I am working on ways to simplify data analysis and data visualization and to this end I have co-developed Shiny apps and dashboards. Our lab is committed to share our tools and expertise, so feel free to reach out if you have questions.  I am a teacher in several courses that deal with cell biology, (advanced) microscopy or data visualization at different levels (BsC, MsC, PhD and up)."
+    "text": "Welcome to my personal website. I am an associate professor at the section of Molecular Cytology at the University of Amsterdam. My research focuses on the development and application of fluorescent probes for the study of molecular processes inside living cells with microscopy. In addition, I am interested in ways to simplify data analysis and data visualization and to this end I have co-developed Shiny apps and dashboards. Our lab is committed to share our tools and expertise, so feel free to reach out if you have questions.  I am a teacher in several courses that deal with cell biology, (advanced) microscopy or data visualization at different levels (BsC, MsC, PhD and up)."
   }
 ]

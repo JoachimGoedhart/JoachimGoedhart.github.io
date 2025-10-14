@@ -27,9 +27,9 @@ title: "Contact"
 -   <a href="mailto:
     &#106;&#046;&#103;&#111;&#101;&#100;&#104;&#097;&#114;&#116;&#064;&#117;&#118;&#097;&#046;&#110;&#108;">j.goedhart\@uva.nl</a>
 
-#### Twitter
+#### Bluesky
 
--   <a href="https://twitter.com/joachimgoedhart">@joachimgoedhart</a>
+-   <a href="https://bsky.app/profile/joachimgoedhart.bsky.social">@joachimgoedhart.bsky.social</a>
 
 :::
 
