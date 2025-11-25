@@ -1,9 +1,6 @@
 ---
-title: "Photos"
+title: "Lightbox"
 subtitle: "(click to enlarge)"
-lightbox:
-  match: auto
-  effect: fade
 format:
   html:
     toc: true
@@ -15,6 +12,12 @@ The code on this page is based on:
 https://b.bapt.xyz/posts/gallery/#generating-the-page-with-quarto
 ---->
 ```
+
+
+## Test
+
+![](photos/Random lab stuff/IMG_6356.JPG){.lightbox}
+![](photos/Random lab stuff/IMG_7499.JPG)
 
 
 ```{r,  results='asis', echo=FALSE, warning=FALSE, message=FALSE}
@@ -40,8 +43,7 @@ for (i in seq_along(dirlist)) {
   cat(paste("::: gallery\n\n"))
   
   #Generate the list of photos
-  #Somehow, I need to {.lightbox} for the individual filenames
-  cat(paste0('![](photos/',dirlist[i],'/',filename,'){.lightbox group="my-gallery"}\n'))
+  cat(paste0('![](photos/',dirlist[i],'/',filename,'){.lightbox}\n'))
   
   #Add a white line after each category
   cat(paste0('\n:::\n\n'))

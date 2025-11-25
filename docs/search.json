@@ -4,7 +4,7 @@
     "href": "photos.html",
     "title": "Photos",
     "section": "",
-    "text": "Agar Art\n\n                  \n\n\n\nCells\n\n               \n\n\n\nPhD Thesis Covers\n\n               \n\n\n\nRandom lab stuff"
+    "text": "Agar Art\n\n                  \n\n\n\nCells\n\n                \n\n\n\nPhD Thesis Covers\n\n                \n\n\n\nRandom lab stuff"
   },
   {
     "objectID": "publications.html",
@@ -77,13 +77,6 @@
     "text": "Calcium Calibrated\nMost biosensors that are used to study cellular processes provide relative information on changes, i.e. an increase or decrease of signal. Yet, it can be valuable to measure absolute changes, for instance in the intracelular concentration of calcium. The FLIM-based sensor, Tq-Ca-FLITS, measures absolute calcium concentrations as shown in this movie. The calcium concentrations in the two endothelial cells change from &lt;100 nM to up to 15 µM and show an oscillating pattern.\nSource: 10.1038/s41467-021-27249-w"
   },
   {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "Visiting address\n\nDr. Ir. Joachim Goedhart\nSection Molecular Cytology\nUniversity of Amsterdam\nRoom C2.264\nScience Park 904\nNL-1098 XH Amsterdam\nThe Netherlands\n\n\n\n\nE-mail\n\nj.goedhart@uva.nl\n\n\n\nBluesky\n\n@joachimgoedhart.bsky.social\n\n\n\n\n\nOur lab is located in the Amsterdam Science Park. Find more information here:\n\nGetting there\nMap"
-  },
-  {
     "objectID": "tools.html",
     "href": "tools.html",
     "title": "Tools",
@@ -124,6 +117,13 @@
     "title": "Tools",
     "section": "DataViz protocols",
     "text": "DataViz protocols\nThe Shiny apps allow user-friendly and fast visualization of data. Despite a lot of flexibility, the options are still limited. To have full reproducibility, control and flexibility over the data visualization, coding is necessary. I have detailed some of the steps (with code) to analyze and plot data with R/ggplot2 in blogs. To gather this information in a central and structured way, I have generated an online resource (or book, if you will) with DataViz protocols. This is a living document that will be updated whenever a new dataViz protocol is ready. If you have suggestions, please let me know! Here is a selection of the different data visualizations that are covered by a protocol:"
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "Visiting address\n\nDr. Ir. Joachim Goedhart\nSection Molecular Cytology\nUniversity of Amsterdam\nRoom C2.264\nScience Park 904\nNL-1098 XH Amsterdam\nThe Netherlands\n\n\n\n\nE-mail\n\nj.goedhart@uva.nl\n\n\n\nBluesky\n\n@joachimgoedhart.bsky.social\n\n\n\n\n\nOur lab is located in the Amsterdam Science Park. Find more information here:\n\nGetting there\nMap"
   },
   {
     "objectID": "index.html",
