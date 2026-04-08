@@ -4,7 +4,7 @@
     "href": "photos.html",
     "title": "Photos",
     "section": "",
-    "text": "Agar Art\n\n                       \n\n\n\nCells\n\n                \n\n\n\nPhD Thesis Covers\n\n                \n\n\n\nRandom lab stuff"
+    "text": "Agar Art\n\n                       \n\n\n\nCells\n\n                \n\n\n\nPhD Thesis Covers\n\n                  \n\n\n\nRandom lab stuff"
   },
   {
     "objectID": "publications.html",
@@ -96,6 +96,13 @@
     "title": "Tools",
     "section": "Apps & code",
     "text": "Apps & code\nData visualization is a key step in data exploration and also important for the interpretation and presentation of results. To simplify data visualization and to encourage the transparent presentation of data, we have generated a number of web apps. These online apps implement state-of-the-art data visualization methods in a user-friendly way and are open source and freely accessible. Several of the apps have been published and it is advised to read the accompanying papers to learn how the apps can be used (you can find this information under the ‘About’ tab of each web app). The example output of the apps should give you some idea of what kind of figures you can make:\n\nThe apps are open-source and freely accessible at https://huygens.science.uva.nl/, or alternatively through this site.\nThe code and scripts that we generate for our research and education are available at Github. Most of the code deals with data Visualization."
+  },
+  {
+    "objectID": "tools.html#ezreverse",
+    "href": "tools.html#ezreverse",
+    "title": "Tools",
+    "section": "EZreverse",
+    "text": "EZreverse\nEZReverse is a web app for inverting the background of images. The original EZreverse version was written in (Shiny for) Python and this version is converted into a standalone app that should be much faster: EZreverse_v1.html\nOr find it here: extra/EZreverse_v1.html"
   },
   {
     "objectID": "tools.html#dashboards",
