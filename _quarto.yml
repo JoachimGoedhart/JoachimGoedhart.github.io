@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - images/demo*.png
 website:
   title: "Joachim Goedhart | Homepage"
   site-url: "https://joachimgoedhart.github.io/"
