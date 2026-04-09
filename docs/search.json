@@ -102,7 +102,7 @@
     "href": "tools.html#ezreverse",
     "title": "Tools",
     "section": "EZreverse",
-    "text": "EZreverse\nEZReverse is a web app for inverting the background of images. The original EZreverse version was written in (Shiny for) Python and this version is converted into a standalone app that should be much faster: EZreverse_v1.html\nOr find it here: extra/EZreverse_v1.html"
+    "text": "EZreverse\nEZReverse is a web app for inverting the background of images. The original EZreverse version was written in (Shiny for) Python and this version is converted into a standalone app that should be much faster: EZreverse.html"
   },
   {
     "objectID": "tools.html#dashboards",

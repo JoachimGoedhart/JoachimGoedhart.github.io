@@ -204,7 +204,7 @@
       <div class="section-label">Image</div>
       <div class="radio-group">
         <label><input type="radio" name="source" value="demo1"> Example: Cells</label>
-        <label><input type="radio" name="source" value="demo2"> Example: Gradient</label>
+        <label><input type="radio" name="source" value="demo2"> Example: Plot</label>
         <label><input type="radio" name="source" value="upload" checked> Upload image</label>
       </div>
       <div id="upload-area" class="conditional">
@@ -387,61 +387,30 @@ function clearOutput() {
   document.getElementById('download-btn').style.display = 'none';
 }
 
-// ─── Demo image generators ────────────────────────────────────────────────────
+// ─── Demo image loaders ───────────────────────────────────────────────────────
 function loadDemo(which) {
-  const size = 300;
-  const canvas = document.createElement('canvas');
-  canvas.width = size; canvas.height = size;
-  const ctx = canvas.getContext('2d');
-  const imgd = ctx.createImageData(size, size);
-  const d = imgd.data;
+  const fileMap = { demo1: 'demo1.png', demo2: 'demo2.png' };
+  const src = fileMap[which];
+  if (!src) return;
 
-  if (which === 'demo1') {
-    // Simulated fluorescence: dark background, bright colored blobs
-    for (let y = 0; y < size; y++) {
-      for (let x = 0; x < size; x++) {
-        const i = (y * size + x) * 4;
-        let r = 0, g = 0, b = 0;
-        // Several gaussian blobs
-        const blobs = [
-          {cx:80,  cy:80,  sr:30, cr:[0,200,80]},
-          {cx:200, cy:120, sr:40, cr:[200,50,200]},
-          {cx:130, cy:200, sr:25, cr:[50,150,255]},
-          {cx:240, cy:230, sr:20, cr:[255,200,0]},
-          {cx:60,  cy:220, sr:35, cr:[255,80,80]},
-        ];
-        blobs.forEach(b2 => {
-          const dist2 = (x-b2.cx)**2 + (y-b2.cy)**2;
-          const v = Math.exp(-dist2 / (2*b2.sr**2));
-          r += b2.cr[0] * v;
-          g += b2.cr[1] * v;
-          b += b2.cr[2] * v;
-        });
-        d[i]   = Math.min(255, r);
-        d[i+1] = Math.min(255, g);
-        d[i+2] = Math.min(255, b);
-        d[i+3] = 255;
-      }
-    }
-  } else {
-    // Gradient + pattern
-    for (let y = 0; y < size; y++) {
-      for (let x = 0; x < size; x++) {
-        const i = (y * size + x) * 4;
-        const nx = x / size, ny = y / size;
-        d[i]   = Math.round((Math.sin(nx * Math.PI * 4) * 0.5 + 0.5) * 255);
-        d[i+1] = Math.round((Math.cos(ny * Math.PI * 3) * 0.5 + 0.5) * 255);
-        d[i+2] = Math.round(((nx + ny) / 2) * 255);
-        d[i+3] = 255;
-      }
-    }
-  }
-
-  ctx.putImageData(imgd, 0, 0);
-  originalImageData = imgd;
-  showOriginal(imgd, size, size);
-  clearOutput();
-  setStatus('Demo loaded. Click Apply.');
+  setStatus('Loading example image…');
+  const img = new Image();
+  img.onload = () => {
+    const canvas = document.createElement('canvas');
+    canvas.width = img.width;
+    canvas.height = img.height;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+    const imgd = ctx.getImageData(0, 0, img.width, img.height);
+    originalImageData = imgd;
+    showOriginal(imgd, img.width, img.height);
+    clearOutput();
+    setStatus('Demo loaded. Click Apply.');
+  };
+  img.onerror = () => {
+    setStatus('Could not load ' + src + '. Make sure it is in the same folder as this HTML file.');
+  };
+  img.src = src;
 }
 
 // ─── File upload / drag-drop ─────────────────────────────────────────────────

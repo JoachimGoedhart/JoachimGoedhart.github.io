@@ -30,9 +30,7 @@ The code and scripts that we generate for our research and education are availab
 
 ## EZreverse
 
-EZReverse is a web app for inverting the background of images. The original  [EZreverse](https://www.biorxiv.org/content/10.1101/2024.05.27.594095v1) version was written in (Shiny for) Python and this version is converted into a standalone app that should be much faster: [EZreverse_v1.html](EZreverse_v1.html)
-
-Or find it here: [extra/EZreverse_v1.html](extra/EZreverse_v1.html)
+EZReverse is a web app for inverting the background of images. The original  [EZreverse](https://www.biorxiv.org/content/10.1101/2024.05.27.594095v1) version was written in (Shiny for) Python and this version is converted into a standalone app that should be much faster: [EZreverse.html](EZreverse.html)
 
 ## Dashboards
 
