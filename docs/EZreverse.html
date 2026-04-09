@@ -197,7 +197,6 @@
 </header>
 
 <div class="layout">
-  <!-- SIDEBAR -->
   <div class="sidebar">
 
     <div class="control-group">
@@ -292,7 +291,6 @@
 
   </div>
 
-  <!-- MAIN -->
   <div class="main">
     <div id="status">Drop an image into the Original image panel or use Browse, then click Apply.</div>
     <div class="image-panels">
@@ -313,11 +311,14 @@
 <footer>EZreverse — Standalone version &nbsp;|&nbsp; Original by Joachim Goedhart &amp; Xinwei Song &nbsp;|&nbsp; <a href="https://github.com/Morwey/ezreverse" target="_blank">GitHub</a></footer>
 
 <script>
-// ─── State ────────────────────────────────────────────────────────────────────
 let originalImageData = null;
 let outputImageData   = null;
 
-// ─── UI wiring ───────────────────────────────────────────────────────────────
+const demoFiles = {
+  demo1: 'demo1.png',
+  demo2: 'demo2.png'
+};
+
 document.querySelectorAll('input[name="source"]').forEach(r => r.addEventListener('change', onSourceChange));
 document.querySelectorAll('input[name="func"]').forEach(r => r.addEventListener('change', onFuncChange));
 document.getElementById('bcolor').addEventListener('change', onBcolorChange);
@@ -349,7 +350,6 @@ dropZone.addEventListener('dragleave', () => {
 dropZone.addEventListener('drop', (e) => {
   e.preventDefault();
   dropZone.classList.remove('dragover');
-
   const file = e.dataTransfer.files[0];
   loadImageFile(file);
 });
@@ -387,13 +387,13 @@ function clearOutput() {
   document.getElementById('download-btn').style.display = 'none';
 }
 
-// ─── Demo image loaders ───────────────────────────────────────────────────────
 function loadDemo(which) {
-  const fileMap = { demo1: 'demo1.png', demo2: 'demo2.png' };
-  const src = fileMap[which];
-  if (!src) return;
+  const fileName = demoFiles[which];
+  if (!fileName) {
+    setStatus('Unknown demo image.');
+    return;
+  }
 
-  setStatus('Loading example image…');
   const img = new Image();
   img.onload = () => {
     const canvas = document.createElement('canvas');
@@ -401,19 +401,20 @@ function loadDemo(which) {
     canvas.height = img.height;
     const ctx = canvas.getContext('2d');
     ctx.drawImage(img, 0, 0);
-    const imgd = ctx.getImageData(0, 0, img.width, img.height);
-    originalImageData = imgd;
-    showOriginal(imgd, img.width, img.height);
+
+    originalImageData = ctx.getImageData(0, 0, img.width, img.height);
+    showOriginal(originalImageData, img.width, img.height);
     clearOutput();
-    setStatus('Demo loaded. Click Apply.');
+    setStatus(`${fileName} loaded. Click Apply.`);
   };
+
   img.onerror = () => {
-    setStatus('Could not load ' + src + '. Make sure it is in the same folder as this HTML file.');
+    setStatus(`Could not load ${fileName}. Make sure it is in the same folder as this HTML file.`);
   };
-  img.src = src;
+
+  img.src = fileName;
 }
 
-// ─── File upload / drag-drop ─────────────────────────────────────────────────
 function loadImageFile(file) {
   if (!file || !file.type.startsWith('image/')) {
     setStatus('Please drop or select a valid image file.');
@@ -431,11 +432,8 @@ function loadImageFile(file) {
     originalImageData = ctx.getImageData(0, 0, img.width, img.height);
     showOriginal(originalImageData, img.width, img.height);
     clearOutput();
-    
-    // Make sure upload mode is selected if user drops a file
     document.querySelector('input[name="source"][value="upload"]').checked = true;
     document.getElementById('upload-area').classList.add('visible');
-    
     setStatus('Image loaded. Auto-applying...');
     setTimeout(() => processImage(), 30);
   };
@@ -452,7 +450,6 @@ function onFileUpload(e) {
   loadImageFile(file);
 }
 
-// ─── Display helpers ──────────────────────────────────────────────────────────
 function showOriginal(imgd, w, h) {
   const c = document.getElementById('ori-canvas');
   c.width = w; c.height = h;
@@ -475,7 +472,6 @@ function setStatus(msg) {
   document.getElementById('status').textContent = msg;
 }
 
-// ─── Main processing ──────────────────────────────────────────────────────────
 function processImage() {
   if (!originalImageData) { setStatus('Please load an image first.'); return; }
 
@@ -493,31 +489,13 @@ function processImage() {
     try {
       const w = originalImageData.width;
       const h = originalImageData.height;
-
-      // Work with flat Uint8ClampedArray copy
       let pixels = new Uint8ClampedArray(originalImageData.data);
 
-      // 1. Apply kernel filter
-      if (kernel !== 'none') {
-        pixels = applyKernel(pixels, w, h, kernel);
-      }
-
-      // 2. Invert or replace background
-      if (func === 'invert') {
-        pixels = invertBackground(pixels, w, h, cspace);
-      } else {
-        pixels = replaceBackground(pixels, w, h, bcolor, threshold, customBC);
-      }
-
-      // 3. Gamma correction
-      if (gamma !== 1) {
-        pixels = applyGamma(pixels, gamma);
-      }
-
-      // 4. Color rotation (hue spin)
-      if (spin !== 0) {
-        pixels = rotateRGB(pixels, spin);
-      }
+      if (kernel !== 'none') pixels = applyKernel(pixels, w, h, kernel);
+      if (func === 'invert') pixels = invertBackground(pixels, w, h, cspace);
+      else pixels = replaceBackground(pixels, w, h, bcolor, threshold, customBC);
+      if (gamma !== 1) pixels = applyGamma(pixels, gamma);
+      if (spin !== 0) pixels = rotateRGB(pixels, spin);
 
       const result = new ImageData(pixels, w, h);
       showOutput(result, w, h);
@@ -527,8 +505,6 @@ function processImage() {
     }
   }, 10);
 }
-
-// ─── Color space helpers ──────────────────────────────────────────────────────
 
 function rgbToHsl(r, g, b) {
   r /= 255; g /= 255; b /= 255;
@@ -569,11 +545,7 @@ function hslToRgb(h, s, l) {
 
 function rgbToYiq(r, g, b) {
   r /= 255; g /= 255; b /= 255;
-  return [
-    0.299*r + 0.587*g + 0.114*b,
-    0.596*r - 0.274*g - 0.322*b,
-    0.211*r - 0.523*g + 0.312*b
-  ];
+  return [0.299*r + 0.587*g + 0.114*b, 0.596*r - 0.274*g - 0.322*b, 0.211*r - 0.523*g + 0.312*b];
 }
 
 function yiqToRgb(y, i, q) {
@@ -587,7 +559,6 @@ function yiqToRgb(y, i, q) {
   ];
 }
 
-// sRGB to linear
 function srgbToLinear(c) {
   c /= 255;
   return c <= 0.04045 ? c/12.92 : Math.pow((c+0.055)/1.055, 2.4);
@@ -598,7 +569,6 @@ function linearToSrgb(c) {
 }
 
 function rgbToLab(r, g, b) {
-  // sRGB -> XYZ (D65)
   let rl = srgbToLinear(r), gl = srgbToLinear(g), bl = srgbToLinear(b);
   let x = (rl*0.4124564 + gl*0.3575761 + bl*0.1804375)/0.95047;
   let y = (rl*0.2126729 + gl*0.7151522 + bl*0.0721750)/1.00000;
@@ -618,7 +588,6 @@ function labToRgb(L, a, bv) {
   return [linearToSrgb(rl), linearToSrgb(gl), linearToSrgb(bl)];
 }
 
-// ─── Invert background ────────────────────────────────────────────────────────
 function invertBackground(pixels, w, h, cspace) {
   const out = new Uint8ClampedArray(pixels);
   const n = w * h;
@@ -644,7 +613,6 @@ function invertBackground(pixels, w, h, cspace) {
   return out;
 }
 
-// ─── Replace background ───────────────────────────────────────────────────────
 function hexToRgb(hex) {
   hex = hex.replace('#','');
   return [parseInt(hex.slice(0,2),16), parseInt(hex.slice(2,4),16), parseInt(hex.slice(4,6),16)];
@@ -677,7 +645,6 @@ function replaceBackground(pixels, w, h, bcolor, threshold, customHex) {
   return out;
 }
 
-// ─── Gamma correction ─────────────────────────────────────────────────────────
 function applyGamma(pixels, gamma) {
   const out = new Uint8ClampedArray(pixels);
   const lut = new Uint8ClampedArray(256);
@@ -693,7 +660,6 @@ function applyGamma(pixels, gamma) {
   return out;
 }
 
-// ─── Color rotation (hue spin in RGB space) ───────────────────────────────────
 function rotateRGB(pixels, angleDeg) {
   const a = angleDeg * Math.PI / 180;
   const cos = Math.cos(a), sin = Math.sin(a);
@@ -714,7 +680,6 @@ function rotateRGB(pixels, angleDeg) {
   return out;
 }
 
-// ─── Convolution kernels ──────────────────────────────────────────────────────
 function applyKernel(pixels, w, h, operation) {
   const kernels = {
     blur:    [1/16,2/16,1/16, 2/16,4/16,2/16, 1/16,2/16,1/16],
@@ -741,7 +706,6 @@ function applyKernel(pixels, w, h, operation) {
     return out;
   }
 
-  // Extract channels
   const R = new Float32Array(w*h), G = new Float32Array(w*h), B = new Float32Array(w*h);
   for (let i = 0; i < w*h; i++) {
     R[i] = pixels[i*4]; G[i] = pixels[i*4+1]; B[i] = pixels[i*4+2];
@@ -772,7 +736,6 @@ function applyKernel(pixels, w, h, operation) {
   return out;
 }
 
-// ─── Download ─────────────────────────────────────────────────────────────────
 function downloadImage() {
   const c = document.getElementById('out-canvas');
   const a = document.createElement('a');
@@ -781,7 +744,6 @@ function downloadImage() {
   a.click();
 }
 
-// ─── Init ─────────────────────────────────────────────────────────────────────
 onSourceChange();
 setStatus('Drop an image into the Original image panel or use Browse, then click Apply.');
 </script>
