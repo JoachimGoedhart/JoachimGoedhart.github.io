@@ -214,7 +214,7 @@
     <hr class="divider">
 
     <div class="control-group">
-      <div class="section-label">Action</div>
+      <div class="section-label">Method</div>
       <div class="radio-group">
         <label><input type="radio" name="func" value="invert" checked> Invert background</label>
         <label><input type="radio" name="func" value="bc"> Replace background color</label>
@@ -226,9 +226,10 @@
         <label>Color space</label>
         <div class="radio-group">
           <label><input type="radio" name="cspace" value="hls" checked> HSL</label>
+          <!-- <label><input type="radio" name="cspace" value="oklab"> OKLab</label> -->
           <label><input type="radio" name="cspace" value="yiq"> YIQ</label>
           <label><input type="radio" name="cspace" value="lab"> CIELab</label>
-          <label><input type="radio" name="cspace" value="rgb"> RGB</label>
+          <label><input type="radio" name="cspace" value="rgb"> RGB (full invert)</label>
         </div>
       </div>
     </div>
@@ -259,32 +260,33 @@
 
     <hr class="divider">
 
-    <div class="control-group">
-      <label>Gamma: <span id="gamma-val">1.0</span></label>
-      <input type="number" id="gamma" min="0.1" max="10" step="0.1" value="1">
-    </div>
+    <div style="border: 1px solid #ddd; border-radius: 6px; padding: 10px; display: flex; flex-direction: column; gap: 10px;">
 
-    <div class="control-group">
-      <label>Color rotation: <span id="spin-val">0</span>°</label>
-      <input type="range" id="spin" min="-180" max="180" step="1" value="0">
-      <div class="range-row"><span>-180°</span><span>180°</span></div>
-    </div>
-
-    <div class="control-group">
-      <label>Filter</label>
-      <div class="radio-group">
-        <label><input type="radio" name="kernel" value="none" checked> None</label>
-        <label><input type="radio" name="kernel" value="blur"> Blur</label>
-        <label><input type="radio" name="kernel" value="edge"> Edge detection</label>
-        <label><input type="radio" name="kernel" value="sharpen"> Sharpen</label>
+      <div class="control-group">
+        <label>Gamma: <span id="gamma-val">1.0</span></label>
+        <input type="number" id="gamma" min="0.1" max="10" step="0.1" value="1">
       </div>
-    </div>
 
-    <hr class="divider">
+      <div class="control-group">
+        <label>Color rotation: <span id="spin-val">0</span>°</label>
+        <input type="range" id="spin" min="-180" max="180" step="1" value="0">
+        <div class="range-row"><span>-180°</span><span>180°</span></div>
+      </div>
 
-    <div class="btn-row">
-      <button class="btn-primary" id="process-btn">Apply</button>
-      <button class="btn-secondary" id="reset-btn">Reset</button>
+      <div class="control-group">
+        <label>Filter</label>
+        <div class="radio-group">
+          <label><input type="radio" name="kernel" value="none" checked> None</label>
+          <label><input type="radio" name="kernel" value="blur"> Blur</label>
+          <label><input type="radio" name="kernel" value="edge"> Edge detection</label>
+          <label><input type="radio" name="kernel" value="sharpen"> Sharpen</label>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn-secondary" id="reset-btn">↺ Reset</button>
+      </div>
+
     </div>
 
     <button class="btn-secondary" id="download-btn" style="display:none;">⬇ Export PNG</button>
@@ -292,7 +294,7 @@
   </div>
 
   <div class="main">
-    <div id="status">Drop an image into the Original image panel or use Browse, then click Apply.</div>
+    <div id="status">Drop an image into the Original image panel or use Browse.</div>
     <div class="image-panels">
       <div class="image-panel" id="drop-zone">
         <h3>Original image</h3>
@@ -322,17 +324,31 @@ const demoFiles = {
 document.querySelectorAll('input[name="source"]').forEach(r => r.addEventListener('change', onSourceChange));
 document.querySelectorAll('input[name="func"]').forEach(r => r.addEventListener('change', onFuncChange));
 document.getElementById('bcolor').addEventListener('change', onBcolorChange);
+
+let debounceTimer = null;
+function debouncedProcess() {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(() => processImage(), 300);
+}
+
 document.getElementById('threshold').addEventListener('input', () => {
   document.getElementById('threshold-val').textContent = document.getElementById('threshold').value;
+  debouncedProcess();
 });
 document.getElementById('spin').addEventListener('input', () => {
   document.getElementById('spin-val').textContent = document.getElementById('spin').value;
+  debouncedProcess();
 });
 document.getElementById('gamma').addEventListener('input', () => {
   document.getElementById('gamma-val').textContent = parseFloat(document.getElementById('gamma').value).toFixed(1);
+  debouncedProcess();
 });
+document.querySelectorAll('input[name="func"]').forEach(r => r.addEventListener('change', () => processImage()));
+document.querySelectorAll('input[name="cspace"]').forEach(r => r.addEventListener('change', () => processImage()));
+document.querySelectorAll('input[name="kernel"]').forEach(r => r.addEventListener('change', () => processImage()));
+document.getElementById('bcolor').addEventListener('change', () => processImage());
+document.getElementById('custom-bc').addEventListener('input', debouncedProcess);
 document.getElementById('file-input').addEventListener('change', onFileUpload);
-document.getElementById('process-btn').addEventListener('click', processImage);
 document.getElementById('reset-btn').addEventListener('click', resetControls);
 document.getElementById('download-btn').addEventListener('click', downloadImage);
 
@@ -377,6 +393,7 @@ function resetControls() {
   document.getElementById('spin').value = 0;
   document.getElementById('spin-val').textContent = '0';
   document.querySelector('input[name="kernel"][value="none"]').checked = true;
+  processImage();
 }
 
 function clearOutput() {
@@ -405,7 +422,8 @@ function loadDemo(which) {
     originalImageData = ctx.getImageData(0, 0, img.width, img.height);
     showOriginal(originalImageData, img.width, img.height);
     clearOutput();
-    setStatus(`${fileName} loaded. Click Apply.`);
+    setStatus(`${fileName} loaded. Processing…`);
+    setTimeout(() => processImage(), 30);
   };
 
   img.onerror = () => {
@@ -588,6 +606,35 @@ function labToRgb(L, a, bv) {
   return [linearToSrgb(rl), linearToSrgb(gl), linearToSrgb(bl)];
 }
 
+// OKLab: perceptually uniform, better hue linearity than CIELab
+// See https://bottosson.github.io/posts/oklab/
+function rgbToOklab(r, g, b) {
+  const rl = srgbToLinear(r), gl = srgbToLinear(g), bl = srgbToLinear(b);
+  // Linear sRGB → LMS (via M1)
+  const l = 0.4122214708*rl + 0.5363325363*gl + 0.0514459929*bl;
+  const m = 0.2119034982*rl + 0.6806995451*gl + 0.1073969566*bl;
+  const s = 0.0883024619*rl + 0.2817188376*gl + 0.6299787005*bl;
+  // Cube root
+  const l_ = Math.cbrt(l), m_ = Math.cbrt(m), s_ = Math.cbrt(s);
+  // LMS → OKLab (via M2)
+  return [
+    0.2104542553*l_ + 0.7936177850*m_ - 0.0040720468*s_,
+    1.9779984951*l_ - 2.4285922050*m_ + 0.4505937099*s_,
+    0.0259040371*l_ + 0.7827717662*m_ - 0.8086757660*s_
+  ];
+}
+
+function oklabToRgb(L, a, b) {
+  const l_ = L + 0.3963377774*a + 0.2158037573*b;
+  const m_ = L - 0.1055613458*a - 0.0638541728*b;
+  const s_ = L - 0.0894841775*a - 1.2914855480*b;
+  const l = l_**3, m = m_**3, s = s_**3;
+  const rl =  4.0767416621*l - 3.3077115913*m + 0.2309699292*s;
+  const gl = -1.2684380046*l + 2.6097574011*m - 0.3413193965*s;
+  const bl = -0.0041960863*l - 0.7034186147*m + 1.7076147010*s;
+  return [linearToSrgb(rl), linearToSrgb(gl), linearToSrgb(bl)];
+}
+
 function invertBackground(pixels, w, h, cspace) {
   const out = new Uint8ClampedArray(pixels);
   const n = w * h;
@@ -607,6 +654,9 @@ function invertBackground(pixels, w, h, cspace) {
     } else if (cspace === 'lab') {
       const [L, a, bv] = rgbToLab(r, g, b);
       [nr, ng, nb] = labToRgb(100-L, a, bv);
+    } else if (cspace === 'oklab') {
+      const [L, a, bv] = rgbToOklab(r, g, b);
+      [nr, ng, nb] = oklabToRgb(1-L, a, bv);
     }
     out[idx] = nr; out[idx+1] = ng; out[idx+2] = nb; out[idx+3] = 255;
   }
@@ -745,7 +795,7 @@ function downloadImage() {
 }
 
 onSourceChange();
-setStatus('Drop an image into the Original image panel or use Browse, then click Apply.');
+setStatus('Drop an image into the Original image panel or use Browse.');
 </script>
 </body>
 </html>
