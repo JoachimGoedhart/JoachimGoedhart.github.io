@@ -192,7 +192,7 @@
     <img src="images/logo.png" alt="EZreverse logo" class="logo-img">
   </div>
   <div class="topbar-right">
-    <div class="topbar-title">Simply invert your image</div>
+    <div class="topbar-title">EZReverse - simply inverts background (not colors)</div>
   </div>
 </header>
 
@@ -229,7 +229,7 @@
           <!-- <label><input type="radio" name="cspace" value="oklab"> OKLab</label> -->
           <label><input type="radio" name="cspace" value="yiq"> YIQ</label>
           <label><input type="radio" name="cspace" value="lab"> CIELab</label>
-          <label><input type="radio" name="cspace" value="rgb"> RGB (full invert)</label>
+          <label><input type="radio" name="cspace" value="rgb"> RGB (also inverts colors)</label>
         </div>
       </div>
     </div>
@@ -294,7 +294,6 @@
   </div>
 
   <div class="main">
-    <div id="status">Drop an image into the Original image panel or use Browse.</div>
     <div class="image-panels">
       <div class="image-panel" id="drop-zone">
         <h3>Original image</h3>
@@ -302,11 +301,12 @@
         <canvas id="ori-canvas" style="display:none;"></canvas>
       </div>
       <div class="image-panel">
-        <h3>Processed image</h3>
+        <h3>Inverted image</h3>
         <div id="out-placeholder" class="placeholder">Result will appear here</div>
         <canvas id="out-canvas" style="display:none;"></canvas>
       </div>
     </div>
+    <div id="status">Drop an image into the Original image panel or use Browse.</div>
   </div>
 </div>
 
@@ -517,7 +517,7 @@ function processImage() {
 
       const result = new ImageData(pixels, w, h);
       showOutput(result, w, h);
-      setStatus('Done.');
+      setStatus('Done - Replace by drag-and-drop or Browse');
     } catch(err) {
       setStatus('Error: ' + err.message);
     }
